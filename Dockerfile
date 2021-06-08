@@ -5,8 +5,11 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN dpkg --add-architecture i386 && \
     apt-get update -yqq && \
-    apt-get install -y curl expect git libc6:i386 libgcc1:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 openjdk-8-jdk wget unzip vim && \
+    apt-get install -y curl expect git libc6:i386 libgcc1:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 openjdk-8-jdk wget unzip vim python2.7 && \
     apt-get clean
+    
+# create a link to python
+RUN ln -s /usr/bin/python2.7 /usr/bin/python
 
 ## Setup Android command line tools and folders.
 ## Note: in newer command line tools, must move all of extracted contents
