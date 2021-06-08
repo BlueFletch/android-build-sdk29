@@ -1,5 +1,7 @@
 # android-build-sdk29
 
+An Android build environment based on Ubuntu 18.04 containing the following:
+
 ```
 Installed packages:
 
